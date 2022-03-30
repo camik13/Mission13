@@ -1,0 +1,71 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+
+}
+
+@model Bowler
+
+<form method="post" asp-controller="Home">
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="BowlerFirstName">Last Name: </label>
+        <input type="text" class="form-control" asp-for="BowlerFirstName" />
+    </div>
+    <br />
+    <div class="form-group">
+        <label asp-for="BowlerLastName">First Name: </label>
+        <input type="text" class="form-control" asp-for="BowlerLastName" />
+    </div>
+    <br />
+    <div class="form-group">
+        <label asp-for="BowlerMiddleInit">Middle Initial: </label>
+        <input type="text" class="form-control" asp-for="BowlerMiddleInit" />
+    </div>
+    <br />
+    <div class="form-group">
+        <label asp-for="BowlerAddress">Address: </label>
+        <input type="text" class="form-control" asp-for="BowlerAddress" />
+    </div>
+    <br />
+    <div class="form-group">
+        <label asp-for="BowlerCity">City: </label>
+        <input type="text" class="form-control" asp-for="BowlerCity" />
+    </div>
+    <br />
+    <div class="form-group">
+        <label asp-for="BowlerState">State: </label>
+        <input type="text" class="form-control" asp-for="BowlerState" />
+    </div>
+    <br />
+    <div class="form-group">
+        <label asp-for="BowlerZip">Zip Code: </label>
+        <input type="text" class="form-control" asp-for="BowlerZip" />
+    </div>
+    <br />
+    <div class="form-group">
+        <label asp-for="BowlerPhoneNumber">Phone Number: </label>
+        <input type="text" class="form-control" asp-for="BowlerPhoneNumber" />
+    </div>
+    <br />
+    <div class="form-group">
+        <label asp-for="TeamID">Team: </label>
+        <select asp-for="TeamID">
+            <option value="">Select a Team</option>
+            @foreach (Team t in ViewBag.Teams)
+            {
+                <option value="@t.TeamID">@t.TeamName</option>
+            }
+        </select>
+    </div>
+    <br />
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
+
+
+
